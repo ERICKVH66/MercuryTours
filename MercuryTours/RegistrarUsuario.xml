@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Registrar" verbose="1">
+	<test name="001Validar">
+		<classes>
+			<class name="test.registrousuario" />
+		</classes>
+	</test>
+	<test name="002Registrar">
+		<classes>
+			<class name="test.registrousuario" />
+		</classes>
+	</test>
+</suite>

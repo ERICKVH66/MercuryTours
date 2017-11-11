@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ReservarVuelo" verbose="1">
+	<!-- Completar completamente las pruebas-->
+	<test name="001Validar...">
+		<classes>
+			<class name="test.reservarvuelo" />
+		</classes>
+	</test>
+	<test name="002Validar....">
+		<classes>
+			<class name="test.reservarvuelo" />
+		</classes>
+	</test>
+	
+</suite>

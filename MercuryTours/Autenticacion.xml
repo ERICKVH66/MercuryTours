@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Autenticacion" verbose="1">
+	<test name="001ValidaCampos">
+		<classes>
+			<class name="test.autenticacion.cp001ValidarCampos" />
+		</classes>
+	</test>
+	<test name="002LoginCorrecto">
+		<classes>
+			<class name="test.autenticacion.cp002LoginMercuryCorrecto" />
+		</classes>
+	</test>
+	<test name="003LoginIncorrecto">
+		<classes>
+			<class name="test.autenticacion.cp003LoginMercuryIncorrecto" />
+		</classes>
+	</test>
+	<test name="004ValidaCamposSignOn">
+		<classes>
+			<class name="test.autenticacion.cp004ValidarCamposSignOn" />
+		</classes>
+	</test>
+	<test name="005SignOnCorrecto">
+		<classes>
+			<class name="test.autenticacion.cp005LoginSignOnCorrecto" />
+		</classes>
+	</test>
+	<test name="006SignOnIncorrecto">
+		<classes>
+			<class name="test.autenticacion.cp006LoginSignOnIncorrecto" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Menu" verbose="1">
+	<test name="001ValidaLinkSuperior">
+		<classes>
+			<class name="test.menu.cp001ValidarLinkSuperior" />
+		</classes>
+	</test>
+	<test name="002ValidaLinkLateral">
+		<classes>
+			<class name="test.menu.cp002ValidarLinkLateral" />
+		</classes>
+	</test>
+	<test name="003ValidaLinkLogin">
+		<classes>
+			<class name="test.menu.cp003ValidarLinkDespuesLogin" />
+		</classes>
+	</test>
+</suite>
