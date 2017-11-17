@@ -34,6 +34,18 @@ public class cp005ReservarVuelo extends TestBase {
 	String password="";
 	String nomBotonSing;
 
+	//Cargamos el excel para los campos de registro de la pagina Book a Flight
+	static ExcelUtils excelCamposRegister;
+	//Datos para el registro de la pagina Book a Flight
+	//Area Passengers
+	String firstName="";
+	String lastName="";
+
+	//Datos CardType
+	String number="";
+	String middle="";
+	String last;
+
 	@Test
 	public void login() {
 		try{
@@ -60,6 +72,7 @@ public class cp005ReservarVuelo extends TestBase {
 		{
 			Assert.fail("No se encontro el radio button");
 		}
+		findFlight.clickButtonLink(findFlight.getBtnContinue());
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
 	}
 	@Test(priority = 2, dependsOnMethods = {"login","diligenciarFindFlight" })
@@ -67,30 +80,57 @@ public class cp005ReservarVuelo extends TestBase {
 	{
 		if(selectFlight.isElementPresentAndDisplay(selectFlight.getRadioButtonoutFlight()))
 		{
-			System.out.println("Valor radio es " +selectFlight.getRbtnOutFlight());
 			selectFlight.clickButtonLink(selectFlight.getRbtnOutFlight());
-			Thread.sleep(2000);
+
 		}
 		if(selectFlight.isElementPresentAndDisplay(selectFlight.getRadioButtoninFlight()))
 		{
-			System.out.println("Valor radio es " +selectFlight.getRbtnInFlight());
 			selectFlight.clickButtonLink(selectFlight.getRbtnInFlight());
-			Thread.sleep(2000);
 		}
 		else
 		{
 			Assert.fail("No se puedo realizar la seleccion");
 		}
+		selectFlight.clickButtonLink(selectFlight.getBtnContinue());
 		bookFlightPage = new BookFlightPage(driver, pageTitleBook);
 	}
 
 	@Test(priority = 3, dependsOnMethods = { "login", "diligenciarFindFlight", "diligenciarSelectFlight" })
-	public void diligenciarBookFlight() throws Exception {
-
+	public void diligenciarBookFlight() throws Exception 
+	{
+        excelCamposRegister = new ExcelUtils("CamposRegister.xlsx", ExcelType.XLSX);
+     	firstName=excelCamposRegister.getCellData(1, 0);
+		lastName=excelCamposRegister.getCellData(1, 1);
+		//combomeal
+		if(bookFlightPage.isElementPresentAndDisplay(bookFlightPage.getComboMeal()))
+		{
+			bookFlightPage.clickButtonLink(bookFlightPage.getComboMealBLML());
+		}
+		//Area cardtype
+		number=excelCamposRegister.getCellData(1, 3);
+		middle=excelCamposRegister.getCellData(1,4);
+		//combo cardtype
+		if(bookFlightPage.isElementPresentAndDisplay(bookFlightPage.getComboCardType()))
+		{
+			bookFlightPage.clickButtonLink(bookFlightPage.getComboCardTypeAX());
+		}
+		//combos expiracion
+		if(bookFlightPage.isElementPresentAndDisplay(bookFlightPage.getComboExpirationMonth()))
+		{
+			bookFlightPage.clickButtonLink(bookFlightPage.getOption01());
+		}
+		if(bookFlightPage.isElementPresentAndDisplay(bookFlightPage.getComboExpirationYear()))
+		{
+			bookFlightPage.clickButtonLink(bookFlightPage.getComboExpirationYear2000());
+		}
+		bookFlightPage.bookMercuryTours(firstName, lastName,number,firstName,middle,lastName);
+		bookFlightPage.clickButtonLink(bookFlightPage.getBtnSecurePurchase());
+        flightConfirmationPage=new FlightConfirmationPage(driver, pageTitleConfirmation);
 	}
 
-	@Test(priority = 4, dependsOnMethods = { "login" })
-	public void verificarConfirmationFlight() throws Exception {
-
+	@Test(priority = 4, dependsOnMethods = { "login", "diligenciarFindFlight", "diligenciarSelectFlight", "diligenciarBookFlight" })
+	public void verificarConfirmationFlight() throws Exception
+	{
+        flightConfirmationPage.clickButtonLink(flightConfirmationPage.getButtonLogOut());
 	}
 }

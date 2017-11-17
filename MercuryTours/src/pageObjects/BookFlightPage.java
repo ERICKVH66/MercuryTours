@@ -24,16 +24,57 @@ public class BookFlightPage extends PageBase{
 	private WebElement inputLastName;
 	@FindBy(how = How.NAME, using = "pass.0.meal")
 	private WebElement comboMeal;
+	//Le damos un valor al comboMeal
+	@FindBy(how = How.XPATH, using = "//input[@name='pass.0.meal'][contains(@value,'BLML')]")
+	private WebElement comboMealBLML;
 	
+	/**
+	 * Metodo que me obtiene el/la  comboMealBLML
+	 * @return  comboMealBLML
+	 */
+	public WebElement getComboMealBLML() {
+		return comboMealBLML;
+	}
+
 	//Ã�rea Credit Card
 	@FindBy(how=How.NAME, using="creditCard")
 	private WebElement comboCardType;
+	//Le damos valor al combo cardtype
+	@FindBy(how=How.XPATH,using="//input[@name='creditCard'][containd(@value='AX']")
+	private WebElement comboCardTypeAX;
+	/**
+	 * Metodo que me obtiene el/la  comboCardTypeAX
+	 * @return  comboCardTypeAX
+	 */
+	public WebElement getComboCardTypeAX() {
+		return comboCardTypeAX;
+	}
 	@FindBy(how=How.NAME, using="creditnumber")
 	private WebElement inputNumber;
 	@FindBy(how=How.NAME, using="cc_exp_dt_mn")
 	private WebElement comboExpirationMonth;
-	@FindBy(how=How.NAME, using="cc_exp_dt_yr")
+	//Valor comboExpiratrionMonth
+	@FindBy(how=How.XPATH, using="//input[@name='cc_exp_dt_mn'][contains(@selected,'01')]")
+	private WebElement option01;
+	/**
+	 * Metodo que me obtiene el/la  option01
+	 * @return  option01
+	 */
+	public WebElement getOption01() {
+		return option01;
+	}
+	@FindBy(how = How.CSS, using = "[name='cc_exp_dt_yr'][value*='roundtrip']")
+	//@FindBy(how=How.NAME, using="cc_exp_dt_yr")
 	private WebElement comboExpirationYear;
+	@FindBy(how=How.XPATH, using ="//input[@name='cc_exp_dt_yr'][contains(@value='2000')]")
+	private WebElement comboExpirationYear2000;
+	/**
+	 * Metodo que me obtiene el/la  comboExpirationYear2000
+	 * @return  comboExpirationYear2000
+	 */
+	public WebElement getComboExpirationYear2000() {
+		return comboExpirationYear2000;
+	}
 	@FindBy(how=How.NAME, using="cc_frst_name")
 	private WebElement inputFirstNameCard;
 	@FindBy(how=How.NAME, using="cc_mid_name")
@@ -144,6 +185,14 @@ public class BookFlightPage extends PageBase{
 	public WebElement getComboDelCountry() {
 		return comboDelCountry;
 	}
-	
-	
+	public void bookMercuryTours(String firstName,String lastName,String number,String firstNameCard, String middle,String lastCard)
+	{
+		sendText(inputFirstName, firstName);
+		sendText(inputLastName, lastName);
+		sendText(inputNumber,number);
+		sendText(inputFirstNameCard, firstNameCard);
+		sendText(inputMiddleNameCard,middle);
+		sendText(inputLastNameCard, lastCard);
+		
+	}
 }

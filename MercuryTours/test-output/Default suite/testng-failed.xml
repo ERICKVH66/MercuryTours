@@ -7,6 +7,8 @@
         <methods>
           <include name="diligenciarSelectFlight"/>
           <include name="diligenciarFindFlight"/>
+          <include name="diligenciarBookFlight"/>
+          <include name="verificarConfirmationFlight"/>
           <include name="initializeTestBaseSetup"/>
           <include name="login"/>
           <include name="tearDown"/>
