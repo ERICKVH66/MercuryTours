@@ -23,7 +23,7 @@ public class FindFlightPage extends PageBase {
 	// WebElements Flight Details
 
 	/**
-	 * Área Flight Details
+	 * Ã�rea Flight Details
 	 */
 	// RadioButtons Individuales
 	@FindBy(how = How.CSS, using = "[name='tripType'][value*='roundtrip']")
@@ -52,18 +52,22 @@ public class FindFlightPage extends PageBase {
 	private WebElement comboToDay;
 
 	/**
-	 * Área Preferences
+	 * Ã�rea Preferences
 	 */
 	// WebElement radio button Service Class
 	@FindBy(how = How.NAME, using = "servClass")
 	private WebElement radioButtonservClass;
 	@FindBy(how = How.NAME, using = "servClass")
 	private List<WebElement> radioButtonservClassOptions;
+	@FindBy(how = How.XPATH, using = "//input[@name='servClass'][contains(@value, 'Business')]")
+	private WebElement rbtnBusiness;
 	
+
 	@FindBy(how = How.NAME, using = "airline")
 	private WebElement comboAirline;
 	
-	//Botón Continue
+      
+	//BotÃ³n Continue
 	@FindBy(how = How.NAME, using = "findFlights")
 	private WebElement btnContinue;
 
@@ -77,6 +81,13 @@ public class FindFlightPage extends PageBase {
 	}
 	public WebElement getRbtnOneWay() {
 		return rbtnOneWay;
+	}
+	/**
+	 * Metodo que me obtiene el/la  rbtnBusiness
+	 * @return  rbtnBusiness
+	 */
+	public WebElement getRbtnBusiness() {
+		return rbtnBusiness;
 	}
 	public List<WebElement> getRadioButtonOptions() {
 		return radioButtonOptions;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="285459" started-at="2017-11-16T18:57:00Z" finished-at="2017-11-16T19:01:46Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="285459" started-at="2017-11-16T18:57:00Z" finished-at="2017-11-16T19:01:46Z">
+      <class name="test.reservarvuelo.cp005ReservarVuelo">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="initializeTestBaseSetup" is-config="true" duration-ms="222971" started-at="2017-11-16T13:57:00Z" finished-at="2017-11-16T14:00:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="login" duration-ms="30270" started-at="2017-11-16T14:00:44Z" finished-at="2017-11-16T14:01:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="diligenciarFindFlight()[pri:1, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="diligenciarFindFlight" duration-ms="510" started-at="2017-11-16T14:01:15Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-16T14:01:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarFindFlight -->
+        <test-method status="PASS" signature="diligenciarSelectFlight()[pri:2, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="diligenciarSelectFlight" duration-ms="9363" started-at="2017-11-16T14:01:15Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.diligenciarFindFlight, test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-16T14:01:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarSelectFlight -->
+        <test-method status="PASS" signature="diligenciarBookFlight()[pri:3, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="diligenciarBookFlight" duration-ms="2" started-at="2017-11-16T14:01:25Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-16T14:01:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarBookFlight -->
+        <test-method status="PASS" signature="verificarConfirmationFlight()[pri:4, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="verificarConfirmationFlight" duration-ms="1" started-at="2017-11-16T14:01:25Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-16T14:01:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarConfirmationFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp005ReservarVuelo@d56d67]" name="tearDown" is-config="true" duration-ms="21064" started-at="2017-11-16T14:01:25Z" finished-at="2017-11-16T14:01:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp005ReservarVuelo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

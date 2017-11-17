@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="ReservarVuelo" verbose="1">
-	<!-- Completar completamente las pruebas-->
-	<test name="001Validar...">
+	<!-- Completar completamente las pruebas -->
+	<test name="001ValidarCamposFindFlight">
 		<classes>
-			<class name="test.reservarvuelo" />
+			<class name="test.reservarvuelo.cp001ValidarCamposFindFlight" />
 		</classes>
 	</test>
-	<test name="002Validar....">
+	<test name="002ValidarCamposSelectFlight">
 		<classes>
-			<class name="test.reservarvuelo" />
+			<class name="test.reservarvuelo.cp002ValidarCamposSelectFlight" />
 		</classes>
 	</test>
-	
+	<test name="003ValidarCamposBookFlight">
+		<classes>
+			<class name="test.reservarvuelo.cp003ValidarCamposBookFlight" />
+		</classes>
+	</test>
+	<test name="004ValidarCamposConfirmationFlight">
+		<classes>
+			<class name="test.reservarvuelo.cp004ValidarCampoConfirmationFlight" />
+		</classes>
+	</test>
+	<test name="005ReservarVuelo">
+		<classes>
+			<class name="test.reservarvuelo.cp005ReservarVuelo" />
+		</classes>
+	</test>
+	<test name="006ReservarVueloCruises">
+		<classes>
+			<class name="test.reservarvuelo.cp006ReservarVueloCruises" />
+		</classes>
+	</test>
+
 </suite>

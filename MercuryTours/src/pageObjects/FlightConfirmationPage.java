@@ -19,11 +19,33 @@ public class FlightConfirmationPage extends PageBase{
 	}
 	
 	//Botones
-	@FindBy(how=How.CSS, using="")
+	@FindBy(how=How.LINK_TEXT, using="SIGN-OFF")
 	private WebElement buttonBackFlights;
-	@FindBy(how=How.XPATH, using="")
+	@FindBy(how=How.LINK_TEXT, using="SIGN-OFF")
 	private WebElement buttonBackHome;
-	@FindBy(how=How.CSS, using="")
+	@FindBy(how=How.LINK_TEXT, using="SIGN-OFF")
 	private WebElement buttonLogOut;
+	/**
+	 * Metodo que me obtiene el/la  buttonBackFlights
+	 * @return  buttonBackFlights
+	 */
+	public WebElement getButtonBackFlights() {
+		return buttonBackFlights;
+	}
+	/**
+	 * Metodo que me obtiene el/la  buttonBackHome
+	 * @return  buttonBackHome
+	 */
+	public WebElement getButtonBackHome() {
+		return buttonBackHome;
+	}
+	/**
+	 * Metodo que me obtiene el/la  buttonLogOut
+	 * @return  buttonLogOut
+	 */
+	public WebElement getButtonLogOut() {
+		return buttonLogOut;
+	}
+	
 	
 }

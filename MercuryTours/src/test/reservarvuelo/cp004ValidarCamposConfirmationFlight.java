@@ -9,6 +9,8 @@ import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.LoginPage;
 import pageObjects.SelectFlightPage;
+import utils.ExcelUtils;
+import utils.ExcelUtils.ExcelType;
 
 public class cp004ValidarCamposConfirmationFlight extends TestBase {
 	LoginPage login;
@@ -20,12 +22,28 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 	String pageTitleFind = "Find a Flight: Mercury Tours";
 	String pageTitleSelect = "Select a Flight: Mercury Tours";
 	//Completar
-	String pageTitleBook="";
-	String pageTitleConfirmation="";
+	String pageTitleBook="Book a Flight: Mercury Tours";
+	String pageTitleConfirmation="Flight Confirmation: Mercury Tours";
+	static ExcelUtils excelDatosLogin;
+	String userName="";
+	String password="";
 
 	@Test
-	public void login() {
-	
+	public void login() 
+	{
+		login=new LoginPage(driver, pageTitle);
+		try{
+			//Se crea la instancia para manejar el archivo DatosLogin.xlsx
+			excelDatosLogin= new ExcelUtils("DatosLogin.xlsx",ExcelType.XLSX);
+			userName=excelDatosLogin.getCellData(1, 1);
+			password=excelDatosLogin.getCellData(1, 2);			
+			login=new LoginPage(driver, pageTitle);
+			login.loginMercuryTours(userName, password);
+			findFlight=new FindFlightPage(driver, pageTitleFind);
+		}catch (Exception e) {
+			Assert.fail(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
@@ -36,6 +54,20 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 		selectFlight.clickButtonLink(selectFlight.getBtnContinue());
 		bookFlight=new BookFlightPage(driver, pageTitleBook);
 		//Clic en botón Secure purchase
+		bookFlight.clickButtonLink(bookFlight.getBtnSecurePurchase());
+		confirmationFlight = new FlightConfirmationPage(driver, pageTitleConfirmation);
 		// Validar estén presentes los tres botones
+		if(!(confirmationFlight.isElementPresentAndDisplay(confirmationFlight.getButtonBackFlights())))
+		{
+			Assert.fail("El boton Back flight no fue encontrado");
+		}
+		if(!(confirmationFlight.isElementPresentAndDisplay(confirmationFlight.getButtonBackHome())))
+		{
+			Assert.fail("El boton Back Home no fue encontrado");
+		}
+		if(!(confirmationFlight.isElementPresentAndDisplay(confirmationFlight.getButtonLogOut())))
+		{
+			Assert.fail("El boton Log Out no fue encontrado");
+		}
 	}
 }

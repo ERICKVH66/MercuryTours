@@ -17,57 +17,67 @@ public class BookFlightPage extends PageBase{
 		super(driver, pageTitle);
 	}
 	
-	//Área Passenger
-	@FindBy(how=How.NAME, using="")
+	//Ã�rea Passenger
+	@FindBy(how = How.NAME, using = "passFirst0")
 	private WebElement inputFirstName;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how = How.NAME, using = "passLast0")
 	private WebElement inputLastName;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how = How.NAME, using = "pass.0.meal")
 	private WebElement comboMeal;
 	
-	//Área Credit Card
-	@FindBy(how=How.NAME, using="")
+	//Ã�rea Credit Card
+	@FindBy(how=How.NAME, using="creditCard")
 	private WebElement comboCardType;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="creditnumber")
 	private WebElement inputNumber;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="cc_exp_dt_mn")
 	private WebElement comboExpirationMonth;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="cc_exp_dt_yr")
 	private WebElement comboExpirationYear;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="cc_frst_name")
 	private WebElement inputFirstNameCard;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="cc_mid_name")
 	private WebElement inputMiddleNameCard;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="cc_last_name")
 	private WebElement inputLastNameCard;
 	
-	//Área Billing Address
-	@FindBy(how=How.NAME, using="")
+	//Ã�rea Billing Address
+	@FindBy(how=How.NAME, using="billAddress1")
 	private WebElement inputBillAddress1;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="billAddress2")
 	private WebElement inputBillAddress2;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="billCity")
 	private WebElement inputBillCity;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="billState")
 	private WebElement inputBillState;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="billZip")
 	private WebElement inputBillPostal;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="billCountry")
 	private WebElement comboBillCountry;
 	
-	//Área Delivery Address
-	@FindBy(how=How.NAME, using="")
+	//Ã�rea Delivery Address
+	@FindBy(how=How.NAME, using="delAddress1")
 	private WebElement inputDelAddress1;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="delAddress2")
 	private WebElement inputDelAddress2;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="delCity")
 	private WebElement inputDelCity;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="delState")
 	private WebElement inputDelState;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="delZip")
 	private WebElement inputDelPostal;
-	@FindBy(how=How.NAME, using="")
+	@FindBy(how=How.NAME, using="delCountry")
 	private WebElement comboDelCountry;
+	@FindBy(how=How.NAME, using="buyFlights")
+	private WebElement btnSecurePurchase;
+	
+	/**
+	 * Metodo que me obtiene el/la  btnSecurePurchase
+	 * @return  btnSecurePurchase
+	 */
+	public WebElement getBtnSecurePurchase() {
+		return btnSecurePurchase;
+	}
 	public WebElement getInputFirstName() {
 		return inputFirstName;
 	}
